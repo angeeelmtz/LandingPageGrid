@@ -1,0 +1,192 @@
+:root{
+    --Dark-Gray: hsl(0, 0%, 63%);
+    --Black: hsl(0, 0%, 0%);
+    --White: hsl(0, 0%, 100%);
+    --Very-Dark-Gray: hsl(0, 0%, 27%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+}
+
+.main{
+    display: grid;
+    max-width: 1440px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, max-content);
+    grid-template-areas: 
+    "main"
+    "shop"
+    "image1"
+    "about"
+    "image2";
+}
+
+.container{
+    width: 90%;
+    padding: 60px 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.main-hero{
+    grid-area: main;
+    background-image: url(./images/desktop-image-hero-1.jpg);
+    min-height: 550px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+}
+
+.main-nav{
+    display: flex;
+}
+
+.main-links{
+    display: none;
+}
+
+.menu-logo{
+    margin: 0 auto;
+}
+
+.main-controls{
+    background-color: var(--Black);
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: main;
+    align-self: end;
+    justify-self: end;
+}
+
+.main-shop{
+    grid-area: shop;
+}
+
+.main-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.main-title{
+    color: var(--Black);
+    font-size: 35px;
+}
+
+.main-parrafo{
+    color: var(--Dark-Gray);
+    line-height: 1.5;
+    margin: 16px 0 32px;
+}
+
+.parrafo-about{
+    margin: 16px 0 0 0;
+}
+
+.main-btn{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: var(--Black);
+}
+
+.btn-arrow{
+    margin-left: 10px;
+}
+
+.main-bg{
+    grid-area: image1;
+    min-height: 250px;
+    height: 100%;
+    background-image: url(./images/image-about-dark.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.main-about{
+    grid-area: about;
+}
+
+.main-title2{
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.main-bg-second{
+    grid-area: image2;
+    background-image: url(./images/image-about-light.jpg);
+}
+
+
+@media (min-width:768px){
+    .container{
+        width: 85%;
+        padding: 50px 0;
+    }
+
+    .main{
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-areas: 
+        "main main main main shop shop shop"
+        "main main main main shop shop shop"
+        "main main main main shop shop shop"
+        "image1 image1 about about about image2 image2"
+        "image1 image1 about about about image2 image2";
+    }
+
+    .main-controls{
+        grid-area: shop;
+        justify-self: start;
+    }
+
+    .menu-icon{
+        display: none;
+    }
+
+    .main-links{
+        padding: 0;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 16px;
+        margin-left: 10%;
+    }
+
+    .menu-logo{
+        margin: 0;
+    }
+
+    .main-link{
+        color: var(--White);
+        text-decoration: none;
+        font-weight: lighter;
+    }
+
+    .main-list{
+        list-style: none;
+    }
+
+    .main-parrafo{
+        text-align: justify;
+    }
+}
+
+
+
+
+
